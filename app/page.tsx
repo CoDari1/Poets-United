@@ -51,7 +51,7 @@ export default function Home() {
 
                     <button
                         onClick={() => setShowForm(true)}
-                        className="rounded-xl border border-line bg-background/25 px-5 py-2.5 text-base font-semibold text-deep transition hover:bg-paper"
+                        className="rounded-xl border border-line bg-green-600/70 px-5 py-2.5 text-base font-semibold text-deep transition hover:bg-paper"
                     >
                         Upload a poem
                     </button>
