@@ -4,6 +4,7 @@ export type Poem = {
   poet_id: number;
   content: string | null;
   title: string | null;
+  poet: string | null;
   published: boolean | null;
 };
 

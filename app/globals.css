@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F5EDDA;
+  --foreground: #1d1208;
+
+  --primary: #123d22;
+  --secondary: #b99f64;
+  --accent: #4c3200;
+  --paper: #efe5c8;
+  --muted: #6b4e28;
+  --line: #c9b47d;
+  --deep: #150e08;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-paper: var(--paper);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-deep: var(--deep);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-literata);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-literata), Georgia, serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  background: rgb(201 185 143 / 0.45);
+  color: var(--deep);
+}
+
+.poem-card {
+  background: var(--paper) !important;
+}
+
+.poem-card {
+  background: var(--paper);
+}
+
+.poem-card::before {
+  background: var(--line);
+  content: "";
+  inset: 4.5rem auto 6.25rem 1.45rem;
+  position: absolute;
+  width: 1px;
 }

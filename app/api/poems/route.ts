@@ -23,7 +23,8 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  const { title, content } = await request.json();
+  const { poet, title, content } = await request.json();
+  const trimmedPoet = typeof poet === "string" ? poet.trim() : "";
 
   if (!title || !content) {
     return NextResponse.json(
@@ -34,7 +35,15 @@ export async function POST(request: NextRequest) {
 
   const { data, error } = await supabase
     .from("poems")
-    .insert([{ title, content, poet_id: DEFAULT_POET_ID, published: false }])
+    .insert([
+      {
+        title,
+        content,
+        poet: trimmedPoet || null,
+        poet_id: DEFAULT_POET_ID,
+        published: false,
+      },
+    ])
     .select();
 
   if (error) {
