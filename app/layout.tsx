@@ -18,8 +18,15 @@ const literata = Literata({
 });
 
 export const metadata: Metadata = {
-  title: "Poetry United",
+  title: "Poets United",
   description: "A quiet public room for sharing poems.",
+  icons: {
+    icon: [
+      { url: "/poets-united-favicon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/poets-united-favicon.png", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({

@@ -1,9 +1,18 @@
+import Image from "next/image";
+
 export default function LoadingPoem() {
   return (
     <main className="poetry-page min-h-screen text-foreground">
       <header className="border-b border-line">
         <div className="mx-auto w-full max-w-4xl px-5 py-5 sm:px-8 lg:px-10">
-          <p className="text-2xl font-black text-deep">Poetry United</p>
+          <Image
+            alt="Poets United"
+            className="h-16 w-auto"
+            height={941}
+            priority
+            src="/poets-united-logo.png"
+            width={997}
+          />
         </div>
       </header>
 

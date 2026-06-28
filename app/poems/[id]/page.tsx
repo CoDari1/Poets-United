@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 import type { Poem } from "../../lib/poems";
@@ -44,8 +45,15 @@ export default async function PoemPage({ params }: PoemPageProps) {
     <main className="poetry-page min-h-screen text-foreground">
       <header className="border-b border-line">
         <div className="mx-auto flex w-full max-w-4xl items-center justify-between gap-5 px-5 py-5 sm:px-8 lg:px-10">
-          <Link className="text-2xl font-black text-deep" href="/">
-            Poetry United
+          <Link aria-label="Poets United home" href="/">
+            <Image
+              alt="Poets United"
+              className="h-16 w-auto"
+              height={941}
+              priority
+              src="/poets-united-logo.png"
+              width={997}
+            />
           </Link>
 
           <Link
